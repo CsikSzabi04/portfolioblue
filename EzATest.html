@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="letöltés.png">
+    <title>Portfolio</title>
+    <style>
+        body { font-family: 'Comic Sans MS', cursive, sans-serif; background-image: url('gifback1.gif'); background-position: center; background-repeat: no-repeat; background-size: cover; color: #ffffff; padding: 0; margin: 0; scroll-behavior: smooth; }
+        header {  text-align: center;padding: 10px 0;  background-color: #1c1c1c;  margin-bottom: 25px; }
+        h1 {  padding-top: 10px;  font-size: 4em;   margin: 0;  color: #241a79;   letter-spacing: 3px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); }
+        h2 {  animation: rotateColor 5s infinite linear;  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);  font-size: 2.5em;  margin-top: 5px;   margin-bottom: 10px;    color: #241a79;   animation: slideIn 1s ease-out; }
+        p {  font-size: 1.4em;  line-height: 1.6;   color: #dddddd;  animation: slideIn 1s ease-out; }
+        section { margin: 0 auto;padding: 25px;  margin-bottom: 40px;   background-color: #1c1c1c;  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);  border-radius: 15px;  width: 75%; }
+        section #container {    width: 110%; }
+        .project {   margin-bottom: 30px;}
+        .project h3 {     color: #241a79;   margin-bottom: 10px;}
+        footer {   text-align: center;     padding: 20px;  background-color: #1c1c1c;    color: #999999; position: relative;   opacity: 0.5;    bottom: 0; width: 100%;}
+        .animated {  opacity: 0; animation: fadeIn 1s ease-out forwards; }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes rotateColor {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        @keyframes flicker {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+        }
+        #main {  width: 100%;}
+        span {
+            width: 200px;
+            height: 200px;
+            color: #241a79;
+            padding: 10px 50px;
+            text-decoration: none;
+            font-size: 40px;
+            transition: 0.3s;
+            box-shadow: 0px 0px 10px black;
+            border-radius: 15px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            text-align: center;
+            animation: slideIn 1s ease-out;
+            position: relative;
+            text-align: center;
+        }
+        #git:hover { text-decoration: none; }
+        #git {   width: 80px;   height: 80px;  font-size: 0pt;   padding: 10px;   margin-bottom: 40px;    color: #241a79; }
+        span img {  width: 90px;  height: 90px; margin-top: 10px;  margin-bottom: 10px;  max-width: 100%; }
+        span a { width: 100%; height: 100%;   color: #241a79;   text-decoration: none;  font-size: 30px;    text-align: center; }
+        span a:hover { color: #3b2cbe;  text-decoration: none; }
+        span:hover {  color: rgb(199, 199, 199); box-shadow: inset 0px 0px 10px black;}
+        .button {    display: inline-block;   padding: 10px 20px;  margin-top: 10px;   background-color: #2b1f9e; color: #fff;   text-decoration: none;   border-radius: 5px;  transition: background-color 0.3s; }
+        .button:hover {  background-color: #2b1f9e;   text-decoration: none;    color: white;  }
+        #myself a:hover {  text-decoration: none; }
+        #myself a {  width: 20%;      color: #241a79;}
+        .heartbeat {   font-size: 15px;    animation: heartbeat 2s infinite; }
+        #projecth2 {   font-size: 2em; }
+        #projecth2:hover {  color: #483ac2; }
+
+        @keyframes heartbeat {
+            0%,
+            100% {
+                transform: scale(0.95);
+            }
+
+            50% {
+                transform: scale(1);
+            }
+        }
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        #right {    float: right;  width: 100%;  margin-left: 10px;  }
+        #left {     float: left;   width: 100%; }
+        .container {  display: flex; align-items: center;  text-align: center; height: auto; width: 100%;}
+        #projecth2 { text-align: left;  }
+        .upper-div { color: #2b1f9e;  display: block; justify-content: space-between;  align-items: center;  padding: 10px 20px; background-color: #1c1c1c;}
+        .upper-div h1 {   display: block;    float: center; }
+        .upper-div #right {    flex: 1;   text-align: right;    margin-bottom: 20px;}
+        .upper-div a { color: #2b1f9e;margin-left: 10px;}
+        .upper-div a:hover { color: #cccccc;}
+        .upper-div .button {   background-color: #2b1f9e;   color: #fff;   padding: 10px 20px;  border-radius: 5px;  text-decoration: none; }
+        .upper-div .button:hover {background-color: #3d31a7; }
+        .round-image { width: 200px; height: 200px; overflow: hidden;   border-radius: 50%;}
+        .round-image img {width: 100%; height: auto; display: block; }
+        .fa {  font-size: 25px; margin-right: 10px; }
+        #git {
+            width: 80px;
+            height: 80px;
+            font-size: 0pt;
+            padding: 10px;
+            margin-bottom: 40px;
+            color: #2b1f9e;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .overlay.active { display: flex; opacity: 1;}
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 50%;
+            opacity: 0;
+            animation: fadeInRotate 0.5s ease forwards;
+        }
+        @keyframes fadeInRotate {
+            0% {
+                opacity: 0;
+                transform: rotateY(-90deg);
+            }
+            100% {
+                opacity: 1;
+                transform: rotateY(0deg);
+            }
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #2b1f9e;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .button:hover { background-color: #4538b8;}
+        #leftname {  position: absolute;  left: 20px;   top: 10px;  color: #fff;   font-size: 1.2em;  font-weight: bold;}
+        .row { display: flex; }
+        .smaller { padding: 15px;  margin-bottom: 20px;}
+        .songs-signin-container {  display: block;  justify-content: space-between;  align-items: center;  width: 88%; }
+        .signin.inactive {opacity: 0.5; pointer-events: none; }
+        .notlikeall {  background-color: #2b2b2b00;  border: none;  box-shadow: none;  width: 88%; animation: fadeIn 1s ease-out forwards; animation: slideIn 1s ease-out; }
+        .notlikeall h3 { color: #2b1f9e; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);}
+        #suno { width: 100%; opacity: 0.8;}
+                /* -----------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+                @media (max-width: 1400px) {
+            span img {
+                width: 100px;
+                height: 100px;
+            }
+            .notlikeall {
+                width: 88%;
+                display: block;
+
+            }
+        }
+
+        @media (max-width: 1200px) {
+            h1 {   font-size: 3.5em;}
+            .round-image {
+                width: 170px;
+                height: 170px;
+                overflow: hidden;
+                display: block;
+                border-radius: 50%;
+            }
+            h2 {   font-size: 2em; }
+            .notlikeall {
+                width: 88%;
+                display: inline-block;
+                margin: 0px 50px;
+            }
+            section {  width: 85%;  }
+            span {
+                width: 180px;
+                height: 180px;
+            }
+            span a {   font-size: 80%; }
+            span img {
+                width: 90px;
+                height: 90px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            h1 {font-size: 3em;}
+            .round-image {
+                width: 130px;
+                height: 130px;
+                overflow: hidden;
+                display: block;
+                border-radius: 70%;
+            }
+            h2 {font-size: 1.8em;}
+            .notlikeall {
+            
+                display:block;
+            }
+            section {   width: 90%;}
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            #left,
+            #right {
+                width: 100%;
+                margin: 10px 0;
+            }
+            span {
+                width: 150px;
+                height: 150px;
+                font-size: 35px;
+            }
+            span a {    font-size: 60%; }
+            span img {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            .notlikeall #suno{
+                opacity: 0;
+            }
+            .round-image {
+                width: 100px;
+                height: 100px;
+                overflow: hidden;
+                display: block;
+                border-radius: 50%;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            section {
+                width: 95%;
+            }
+            span {
+                width: 120px;
+                height: 120px;
+                font-size: 30px;
+            }
+            span a {
+                font-size: 50%;
+            }
+            span img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        @media(max-width: 200px) {
+            span img {
+                width: 30px;
+                height: 30px;
+            }
+            .round-image {
+                width: 70px;
+                height: 70px;
+                overflow: hidden;
+                display: block;
+                border-radius: 50%;
+            }
+            span a {
+                font-size: 30%;
+            }
+        }
+
+        /* -----------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+        .signoverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-container input {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            background-color: #121d5e;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .form-container button:hover {
+            background-color: #221b80b4;
+        }
+
+        .form-container .close-btn {
+            background-color: #cccccc00;
+            color: #221763;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 5rem;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        #emailp{ font-size: 1rem; color: green;}
+        #or{margin: 10px 20px;}
+
+        .toggle {  position : relative ;  display : inline-block;  width : 40px; height : 20px;  background-color: rgb(0, 19, 128);  border-radius: 30px; border: 2px solid rgb(255, 255, 255);  }   
+        .toggle:after { content: '';  position: absolute; width: 16px;  height: 16px; border-radius: 50%; background-color: rgb(255, 255, 255); right: 1px;  transition:  all 0.5s;}     
+        p { font-family: Arial, Helvetica, sans-serif;   font-weight: bold;   font-size: 10px;    }  
+        .checkbox:checked + .toggle::after {   right : 30px;  }    
+        .checkbox:checked + .toggle { background-color: rgb(32, 32, 32);}    
+        .checkbox { display : none;}
+        #sadss{width: 15px; height: 15px;}
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="upper-div">
+            <div id="leftname">Cs_Szabj04 <br> <p id="emailp"></p></div>
+            <div id="right">
+                <a href="https://www.instagram.com/cs_szabj04/" target="_blank"><i class="fa fa-instagram"></i></a>
+                <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=alexszabi04@gmail.com&su=Collaboration%20Opportunity%20%2F%20Egy%C3%BCttm%C5%B1k%C3%B6d%C3%A9si%20Lehet%C5%91s%C3%A9g&body=Dear%20Cs%C3%ADk%20Szabolcs%20Alex,%0A%0AI%20would%20like%20to%20discuss%20a%20collaboration%20opportunity%20with%20you.%0A%0ABest%20regards,%0A%0A%5BYour%20Name%5D%0A%0A---%0A%0AKedves%20Cs%C3%ADk%20Szabolcs%20Alex,%0A%0ASzeretn%C3%A9k%20egy%20egy%C3%BCttm%C5%B1k%C3%B6d%C3%A9si%20lehet%C5%91s%C3%A9gr%C5%91l%20besz%C3%A9lni%20veled.%0A%0A%C3%9Cdv%C3%B6zlettel,%0A%0A%5BNeved%5D"><i class="fa fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/szabolcs-cs%C3%ADk-a4b767315/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                <br>
+                <div id="sadss">
+                    <input type="checkbox" id="switch" class="checkbox"/>
+                    <label for="switch" class="toggle" onclick="navigateToPage()"></label>
+                </div>
+            </div>
+            <h1>Csík Szabolcs Alex</h1>
+        </div>
+        <h2>My projects<a id="git" href="https://github.com/csikszabi04" class="fa fa-github" style="font-size:40px;" target="blank">&copy;</a></a></h2>
+    </header>
+    <section class="animated box bigger" id="ezvan" class="box">
+        <div class="container ">
+            <div id="left"><a href="https://csikszabi04.github.io/magamrol/" target="_blank"></a>
+                <h2 id="myself"><a href="https://csikszabi04.github.io/magamrol/" target="_blank">Önéletrajz (CV)&lt;--</a></h2>
+            </div>
+            <div id="center">
+                <div class="round-image">
+                    <img src="007.jpg">
+                </div>
+            </div>
+            <div id="right">
+                <h2 id="myself"><a href="https://csikszabi04.github.io/secondH/" target="_blank">--&gt; About Me </a></h2>
+            </div>
+        </div>
+
+    </section>
+    <section class="animated  box bigger">
+        <h2 id="projecth2">Projects</h2>
+        <div id="main">
+            <span><a href="https://csikszabi04.github.io/tetris/" target="_balnk">Tetris<img src="tetris.png"></a></span>
+            <span><a href="https://csikszabi04.github.io/mouse/eger.html" target="_blank">Mouse<img src="sajt.png"  alt=""> </a></span>
+            <span><a href="https://csikszabi04.github.io/Utvonal/" target="_blank">Route <img src="utvonal.png"  alt=""></a></span>
+            <span><a href="https://csikszabi04.github.io/mappak1/" target="_blank">Folders <img src="mappak.png" alt=""></a></span>
+            <span><a href="https://csikszabi04.github.io/labirintus/" target="_blank">Labyrinth <img src="labirintus.png" alt=""></a></span>
+            <span><a href="https://csikszabi04.github.io/alien/alien.html" target="_blank">Alien<img src="alien.png" alt=""></a> </span>
+            <span><a href="https://csikszabi04.github.io/box/" target="_blank">Box<img src="dobozok.png" alt=""></a></span>
+            <span><a href="https://csikszabi04.github.io/diamond/" target="_blank">Diamond<img src="diamond.png" alt=""></a> </span>
+            <span><a href="https://csikszabi04.github.io/github/" target="_blank">GitTest<img src="git.png" alt=""></a></span>
+            <span><a href="https://csikszabi04.github.io/hangman/" target="_blank">Hangman<img src="hang.png" alt=""></a> </span>
+            <span><a href="video.html" target="_blank">?<img src="questionmark.png" alt=""></a> </span>
+        </div>
+    </section>
+    <section class="adnimated notlikeall">
+        <div class="row ">
+            <div class="col-md-6 ">
+                <section class="animated box smaller">
+                    <div class="">
+                        <div class="songs">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="fa fa-music"> Songs</h2>
+                                    <p>I also create music! Check out my playlist on Suno:</p>
+                                    <a href="https://suno.com/playlist/08dc9ca7-c085-47ad-847f-ef0189a3ebfb" target="_blank" class="button ">Listen on Suno</a>
+                                </div>
+                                <div class="col-5 ">    
+                                    <p>
+                                    <a href="https://suno.com/playlist/08dc9ca7-c085-47ad-847f-ef0189a3ebfb" target="_blank"><img src="003.png" class="img-fluid" id="suno"></a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-6 ">
+                <section class="">
+                    <div class=" signin">
+
+                        <div class="row"><h3>Sign In</h3><h3>/</h3><h3>Sign Up</h3></div> 
+                        <div class="row"><a href="#" class="button" id="signInUpBtn">Follow For More</a> <p id="or"> or </p> <a href="https://csikszabi04.github.io/signin/" class="button">Sign Up / In</a></div>
+
+                        <div id="signoverlay" class="signoverlay">
+                            <div class="form-container">
+                                <div class="container">
+                                    <h2 class="text-center">Sign Up / Sign In</h2>
+                                    <form id="authForm">
+                                        <div class="form-group">
+                                            <label for="email">Email address</label>
+                                            <input type="email" class="form-control" id="email" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Password</label>
+                                            <input type="password" class="form-control" id="password" required>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <button type="button" class="btn" id="signUpBtn">Sign Up</button>
+                                            <button type="button" class="btn" id="signInBtn">Sign In</button>
+                                        </div>
+                                        <div id="message" class="mt-3"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="signoverlay" class="signoverlay">
+                            <div class="form-container">
+                                <span class="close-btn" id="closeBtn">&times;</span>
+                                <h2>Join our newsletter</h2>
+                                <input type="email" id="email" placeholder="Email">
+                                <button id="submitBtn">Submit</button>
+                                <div id="message" class="mt-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <section class="animated bigger" id="contact">
+        <h2>Contact Me</h2>
+        <p> Ready to dive into the abyss? Feel free to reach out to me for collaborations and inquiries.</p>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=alexszabi04@gmail.com&su=Collaboration%20Opportunity%20%2F%20Egy%C3%BCttm%C5%B1k%C3%B6d%C3%A9si%20Lehet%C5%91s%C3%A9g&body=Dear%20Cs%C3%ADk%20Szabolcs%20Alex,%0A%0AI%20would%20like%20to%20discuss%20a%20collaboration%20opportunity%20with%20you.%0A%0ABest%20regards,%0A%0A%5BYour%20Name%5D%0A%0A---%0A%0AKedves%20Cs%C3%ADk%20Szabolcs%20Alex,%0A%0ASzeretn%C3%A9k%20egy%20egy%C3%BCttm%C5%B1k%C3%B6d%C3%A9si%20lehet%C5%91s%C3%A9gr%C5%91l%20besz%C3%A9lni%20veled.%0A%0A%C3%9Cdv%C3%B6zlettel,%0A%0A%5BNeved%5D" target="_blank" class="button">Email Me</a>
+    </section>
+
+    <footer class="animated ">
+        <p class="heartbeat">&copy; 2024 Csík Szabolcs | Software-developer and -tester</p>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const animatedElements = document.querySelectorAll('.animated');
+            animatedElements.forEach(element => {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const roundImages = document.querySelectorAll('.round-image img');
+            const overlay = document.createElement('div');
+            overlay.className = 'overlay';
+
+            roundImages.forEach(img => {
+                img.addEventListener('click', function () {
+                    const enlargedImg = img.cloneNode();
+                    enlargedImg.classList.add('enlarged-img');
+                    overlay.innerHTML = '';
+                    overlay.appendChild(enlargedImg);
+                    document.body.appendChild(overlay);
+                    setTimeout(function () {
+                        overlay.classList.add('active');
+                    }, 50);
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            overlay.addEventListener('click', function (event) {
+                if (event.target === overlay) {
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('.button').addEventListener('click', function () {
+                const signinSection = document.querySelector('.signin');
+                signinSection.classList.add('inactive');
+            });
+        });
+
+
+        document.getElementById('signInUpBtn').addEventListener('click', function () {
+             document.getElementById('signoverlay').style.display = 'flex';
+        });        
+
+        document.getElementById('closeBtn').addEventListener('click', function () {
+            document.getElementById('signoverlay').style.display = 'none';
+        });
+
+        document.getElementById('submitBtn').addEventListener('click', function () {
+            var email = document.getElementById('email').value;
+
+            if (email) {
+                document.getElementById('emailp').innerText =  email;
+                document.getElementById('signoverlay').style.display = 'none';
+            } else {
+                alert('Please enter both email and password');
+            }
+        });
+
+        function navigateToPage() {
+            var isChecked = document.getElementById('switch').checked;
+            if (isChecked) {
+                window.location.href = "EzATest.html"; 
+            } else {
+                window.location.href =  "PortfolioTest.html"; 
+            }
+        }
+    </script>
+</body>
+
+</html>
