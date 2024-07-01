@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="hu">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -247,14 +246,17 @@
                 margin: 10px 0;
             }
             span {
-                width: 150px;
-                height: 150px;
+                width: 130px;
+                height: 130px;
                 font-size: 35px;
             }
-            span a {    font-size: 60%; }
+            span a {    font-size: 50%; }
             span img {
-                width: 70px;
-                height: 70px;
+                width: 60px;
+                height: 30px;
+            }
+            .sor{
+                display: inline-block;
             }
         }
 
@@ -276,26 +278,69 @@
                 font-size: 1.5em;
             }
             section {
-                width: 95%;
+                width: 60%;
             }
             span {
-                width: 120px;
-                height: 120px;
+                width: 70px;
+                height: 70px;
                 font-size: 30px;
+                padding: 0px;
             }
             span a {
                 font-size: 50%;
             }
             span img {
+                width: 1px; height: 1px; opacity: 0;
+            }
+            #sads{opacity: 0;}
+            h1{font: large;}
+             h2, h3, h4{
+                font-size: medium;
+            }
+            #sads{opacity: 0;}
+            #leftname{font-size: small;}
+            .skill p{font-size: 10px;}
+        }
+
+        @media(max-width: 384px){
+            span {
                 width: 50px;
                 height: 50px;
+                font-size: 30px;
+                padding: 0px;
+            }
+            span a {
+                font-size: 40%;
+            }
+            h1{font: large;}
+            h2, h3, h4, p{
+                font-size: 1rem;
+            }
+            #leftname{font-size: small;}
+        }
+
+        @media(max-width: 340px){
+            span {
+                width: 60px;
+                height: 60px;
+                font-size: 20px;
+            }
+            span a {
+                font-size: 30%;
+            }
+            span img {
+                width: 1px; height: 1px; opacity: 0;
             }
         }
 
         @media(max-width: 200px) {
-            span img {
+            span {
                 width: 30px;
                 height: 30px;
+                font-size: 20px;
+            }
+            span img {
+                width: 1px; height: 1px; opacity: 0;
             }
             .round-image {
                 width: 70px;
@@ -384,6 +429,10 @@
         .checkbox:checked + .toggle { background-color: rgb(32, 32, 32);}    
         .checkbox { display : none;}
         #sadss{width: 15px; height: 15px;}
+        .skill p{font-size: 20px; margin-left: 5px; }
+        .skill a{ margin-left: 5px; text-decoration: underline; color: #204a97;}
+        .skill h3{ color: #182869;  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);  }
+        .m{  margin-left: 5px;}
     </style>
 
 </head>
@@ -408,7 +457,7 @@
     <section class="animated box bigger" id="ezvan" class="box">
         <div class="container ">
             <div id="left"><a href="https://csikszabi04.github.io/magamrol/" target="_blank"></a>
-                <h2 id="myself"><a href="https://csikszabi04.github.io/magamrol/" target="_blank">Önéletrajz (CV)&lt;--</a></h2>
+                <h2 id="myself"><a href="https://csikszabi04.github.io/magamrol/" target="_blank">Önéletrajz (CV) &lt;--</a></h2>
             </div>
             <div id="center">
                 <div class="round-image">
@@ -416,13 +465,14 @@
                 </div>
             </div>
             <div id="right">
-                <h2 id="myself"><a href="https://csikszabi04.github.io/secondH/" target="_blank">--&gt; About Me </a></h2>
+                <h2 id="myself"><a  href="cv.png" download="CV.png" target="_blank">--&gt; Download CV</a></h2>
+                <!--<h2 id="myself"><a href="https://csikszabi04.github.io/secondH/" target="_blank">--&gt; About Me </a></h2> -->
             </div>
         </div>
 
     </section>
     <section class="animated  box bigger">
-        <h2 id="projecth2">Projects</h2>
+        <h2 id="projecth2"> &#9830; Projects</h2>
         <div id="main">
             <span><a href="https://csikszabi04.github.io/tetris/" target="_balnk">Tetris<img src="tetris.png"></a></span>
             <span><a href="https://csikszabi04.github.io/mouse/eger.html" target="_blank">Mouse<img src="sajt.png"  alt=""> </a></span>
@@ -436,6 +486,11 @@
             <span><a href="https://csikszabi04.github.io/hangman/" target="_blank">Hangman<img src="hang.png" alt=""></a> </span>
             <span><a href="video.html" target="_blank">?<img src="questionmark.png" alt=""></a> </span>
         </div>
+    </section>
+    <section class="animated box bigger skill">
+        <h3>&#9824; Skills</h3>
+        <p>I'm a Software-developer and Tester</p>
+        <h4 class="projecth4"> <p>If you want to know about my web developer skills<a href="https://csikszabi04.github.io/secondH/" target="_blank">click here</a></p> </h4>
     </section>
     <section class="adnimated notlikeall">
         <div class="row ">
@@ -462,8 +517,8 @@
                 <section class="">
                     <div class=" signin">
 
-                        <div class="row"><h3>Sign In</h3><h3>/</h3><h3>Sign Up</h3></div> 
-                        <div class="row"><a href="#" class="button" id="signInUpBtn">Follow For More</a> <p id="or"> or </p> <a href="https://csikszabi04.github.io/signin/" class="button">Sign Up / In</a></div>
+                        <div class="row"><h3>&#9827; Sign In</h3><h3>/</h3><h3>Sign Up</h3></div> 
+                        <div class="row sor"><a href="#" class="button" id="signInUpBtn">Follow For More</a> <p id="or"> or </p> <a href="https://csikszabi04.github.io/signin/" class="button">Sign Up / In</a></div>
                         <div id="signoverlay" class="signoverlay">
                             <div class="form-container">
                                 <span class="close-btn" id="closeBtn">&times;</span>
@@ -486,7 +541,7 @@
     </section>
 
     <footer class="animated ">
-        <p class="heartbeat">&copy; 2024 Csík Szabolcs | Software-developer and -tester</p>
+        <p class="heartbeat">&copy; 2024 Csík Szabolcs | Software-developer and -tester  &#128511;</p>
     </footer>
 
 
