@@ -10,7 +10,10 @@
     <link rel="icon" type="image/x-icon" href="02.png">
     <title>Portfolio</title>
     <style>
-        body { font-family: 'Comic Sans MS', cursive, sans-serif; background-image: url('gifback1.gif'); background-position: center; background-repeat: no-repeat; background-size: cover; color: #ffffff; padding: 0; margin: 0; scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 12px; background-color: #1c1c1c; }
+        ::-webkit-scrollbar-thumb {   background: rgba(0, 102, 255, 0.664);   border-radius: 6px; }
+        ::-webkit-scrollbar-track {    background: #1c1c1c;    border-radius: 6px; }
+        body {scroll-behavior: smooth; font-family: 'Comic Sans MS', cursive, sans-serif; background-image: url('gifback1.gif'); background-position: center; background-repeat: no-repeat; background-size: cover; color: #ffffff; padding: 0; margin: 0; scroll-behavior: smooth;   scrollbar-width: thin; /* Make scrollbar thinner */ scrollbar-color: rgba(114, 39, 39, 0.801) #f1f1f1; }
         header {  text-align: center;padding: 10px 0;  background-color: #1c1c1c;  margin-bottom: 25px; }
         h1 {  padding-top: 10px;  font-size: 4em;   margin: 0;  color: #241a79;   letter-spacing: 3px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); }
         h2 {  animation: rotateColor 5s infinite linear;  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);  font-size: 2.5em;  margin-top: 5px;   margin-bottom: 10px;    color: #241a79;   animation: slideIn 1s ease-out; }
